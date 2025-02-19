@@ -7,3 +7,4 @@ This document contains actual tasks and features to be implemented in the projec
 ## 🚀 TODO list
 - [ ] Set wysiwyg toolbar.
 - [ ] Test Breeze.
+- [ ] Make welcome page.

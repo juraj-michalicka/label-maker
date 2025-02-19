@@ -4,6 +4,6 @@
 It allows users to create customizable labels for various purposes, such as beer bottles, packaging, or organizational needs.
 
 ## 🚀 Features
-- 🖨️ **Print-ready output** – Generate PDF or image files for easy printing.
+- 🖨️ **Print-ready output** – Generate labels set for easy printing.
 - 🔗 **Social login support** – (Planned) Sign in using Google or Facebook.
-- 📦 **Label storage** – Save and manage your labels for future use.
+- 📦 **Label storage** – (Planned) Save and manage your labels for future use.
