@@ -1,22 +1,27 @@
+import '../css/app.css';
 import './bootstrap';
-import tinymce from 'tinymce';
 
-// Import TinyMCE assets (nevyhnutné pre správne zobrazenie editoru)
-import 'tinymce/themes/silver';
-import 'tinymce/icons/default';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { createApp, h } from 'vue';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-// Import pluginov (voliteľné, podľa potreby)
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/lists';
-import 'tinymce/plugins/image';
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-// Inicializácia TinyMCE po načítaní stránky
-document.addEventListener("DOMContentLoaded", function() {
-    tinymce.init({
-        selector: 'textarea.tinymce',
-        plugins: 'link lists image',
-        toolbar: 'undo redo | bold italic | bullist numlist outdent indent | link image',
-        menubar: false,
-        height: 300,
-    });
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) =>
+        resolvePageComponent(
+            `./Pages/${name}.vue`,
+            import.meta.glob('./Pages/**/*.vue'),
+        ),
+    setup({ el, App, props, plugin }) {
+        return createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(ZiggyVue)
+            .mount(el);
+    },
+    progress: {
+        color: '#4B5563',
+    },
 });

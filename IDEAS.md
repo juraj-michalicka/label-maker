@@ -5,10 +5,13 @@ This document contains ideas and concepts for potential future improvements and 
 ---
 
 ## 🚀 Feature Ideas
-- [ ] Use **Laravel Breeze** for authentication setup.
+- [x] Use **Laravel Breeze** for authentication setup.
 - [ ] Integrate **Laravel Socialite** for Google and Facebook login.
 - [ ] Implement **label storage** functionality.
 - [ ] Create **label templates**, e.g., for beer labeling.
+- [ ] Add more **fonts** to editor.
+- [ ] Add **fix size** setting for label.
+- [ ] Add nice **designe** for app.
 
 ---
 
