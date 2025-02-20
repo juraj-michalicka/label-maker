@@ -18,6 +18,20 @@ const gridStyle = computed(() => ({
 const printLabels = () => {
     window.print();
 };
+
+const editorOptions = {
+  modules: {
+    toolbar: [
+      [{ header: [1, 2, true] }], // H1, H2, normal text
+      [{ font: [] }], // Font selection
+      [{ align: [] }], // Text alignment
+      ['bold', 'italic'], // Bold, Italic
+      //[{ color: [] }, { background: [] }], // Font color, Background color
+      ['clean'] // Remove formatting
+    ]
+  },
+  theme: 'snow'
+};
 </script>
 
 <template>
@@ -47,7 +61,7 @@ const printLabels = () => {
         <!-- Quill Editor -->
         <div class="mb-6 no-print">
             <label class="block mb-2">Edit your label:</label>
-            <QuillEditor v-model:content="labelContent" theme="snow" toolbar="full" content-type="html"/>
+      <QuillEditor v-model:content="labelContent" :options="editorOptions" content-type="html" />
         </div>
 
         <!-- Print button -->
@@ -66,7 +80,7 @@ const printLabels = () => {
                         :key="`${page}-${index}`"
                         class="border text-sm bg-gray-100 label-content p-1"
                     >
-                        <div v-html="labelContent"></div>
+                        <div v-html="labelContent || ''"></div>
                         <div v-if="showCounter" class="text-xs text-center text-gray-500 mt-2">
                             {{ (page - 1) * (cols * rows) + index }}/{{ totalLabels }}
                         </div>
