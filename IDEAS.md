@@ -12,6 +12,7 @@ This document contains ideas and concepts for potential future improvements and 
 - [ ] Add more **fonts** to editor.
 - [ ] Add **fix size** setting for label.
 - [ ] Add nice **designe** for app.
+- [ ] Upload **image** as label, alternative for wysiwyg
 
 ---
 
